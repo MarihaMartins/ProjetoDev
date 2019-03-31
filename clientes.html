@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="inventario">
+<head>
+	<title>Cadastro Clientes</title>
+	
+	<!--CHAMADA DO ARQUIVO DE ESTILO E BOOTSTRAP-->
+
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/default.css">
+
+ 	
+	<!--CHAMADA DO ARQUIVO SCOPE E ANGULARJS-->
+ 	<script src="lib/angular/angular.js"></script>
+ 	<script src="lib/angular/scope.js"></script>
+ 
+</head>
+
+<body ng-controller="listaClientesCtrl">
+ <div class="jumbotron">
+ 	<h5><a href="index.html">Voltar</a></h5>
+ 	<h3>{{app}}</h3>
+
+ 	<hr>
+ 	<h4>{{titulo}}</h4>
+ 	
+ 	<table class=" table">
+ 		<tr>
+ 			<th></th>
+ 			<th>Nome</th>
+ 			<th>CNPJ</th>
+ 			<th>Telefone</th>
+ 			<th>E-mail</th>
+ 			<th>Data Cadastro</th>
+ 		</tr>
+ 		<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in clientes">
+ 			<td><input type="checkbox" ng-model="contato.selecionado"/></td>
+ 			<td>{{contato.nome}}</td>
+ 			<td>{{contato.cnpj}}</td>
+ 			<td>{{contato.telefone}}</td>
+ 			<td>{{contato.email}}</td>
+ 			<td>{{contato.dataCadastro}}</td>
+ 			
+
+ 		</tr>
+
+ 	</table>
+
+ 	<hr> 
+ 	<input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" />
+ 	<input class="form-control" type="text" ng-model="contato.cnpj" placeholder="CNPJ" />
+ 	<input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" />
+ 	<input class="form-control" type="text" ng-model="contato.email" placeholder="E-Mail" />
+ 	<input class="form-control" type="text" ng-model="contato.dataCadastro" placeholder="Data de Cadastro" />
+
+ 	
+ 	<button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)" ng-disabled="!contato.nome || !contato.cnpj || !contato.telefone || !contato.email || !contato.dataCadastro">Adicionar Novo Cliente</button>
+ 	<button class="btn btn-danger btn-block" ng-click="apagarContantos(clientes)" ng-disabled="!isContatoSelecionado(clientes)">Deletar Cliente</button>
+ </div>
+ <div ng-include="'footer.html'"></div>
+ </body> 
+ 
+
+</html>

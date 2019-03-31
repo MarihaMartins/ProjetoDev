@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+ <html lang="pt-br" ng-app="inventario">
+ <head>
+ 	<title>Inventario Clientes</title>
+ 	
+ 	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/default.css">
+
+ 	
+	
+ 	<script src="lib/angular/angular.js"></script>
+ 	<script src="lib/angular/scope.js"></script>
+ 	<script src="lib/js/jquery-3.2.1.min.js"></script>
+ 	<script src="lib/js/popper.min.js"></script>
+ 	<script src="lib/js/bootstrap.min.js"></script>
+
+ 	
+ </head>
+ <body ng-controller="pageHomeCtrl">
+ <div class="jumbotron">
+ 	<h3>Inventário</h3>
+	<table class="table">
+	 <tr>
+	 		
+	 	<th><a href="clientes.html">CLIENTE</a></th>
+	 	
+	 </tr>
+ </table>
+</div>
+<div ng-include="'footer.html'"></div>
+ </body> 
+ </html>
+
+ <!-- ngBind pega informações do SCOPE e exibe
+ 	  ngModel pega informações da view e manda para o SCOPE
+
+ 	  ng-model
+ 	  Aplica nos Inputs
+ 	  nos Selects
+ 	  nos TextArea
+
+
+ 	  ToWayDataBind
+
+ 	  ng-click será utilizdo para disparar a inserção de informação na tabela
+ -->
